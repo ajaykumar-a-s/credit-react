@@ -3,6 +3,13 @@ import { useNavigate } from "react-router-dom";
 import loginService from "../services/LoginService";
 function Login() {
   const navigate = useNavigate();
+  useEffect(() => {
+    if (loginService.isCustomerLoggedIn()) {
+      navigate("/customer");
+    } else if (loginService.isAdminLoggedIn()) {
+      navigate("/card/view-requests");
+    }
+  }, [navigate]);
   const [loginForm, setLoginForm] = useState({
     email: "",
     password: "",
@@ -10,15 +17,16 @@ function Login() {
   const handleChange = (e) => {
     setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
   };
+  const [errorMessage, setErrorMessage] = useState("");
   const onCustomerLogin = () => {
     loginService
       .customerLogin(loginForm)
       .then((response) => {
         localStorage.setItem("customer", JSON.stringify(response.data));
-        navigate("/customer")
+        navigate("/customer");
       })
       .catch((error) => {
-        setErrorMessage(error.response.data.message);
+        setErrorMessage(error.response.data);
       });
   };
   const onAdminLogin = () => {
@@ -29,10 +37,10 @@ function Login() {
         navigate("/card/view-requests");
       })
       .catch((error) => {
-        setErrorMessage(error.response.data.message);
+        setErrorMessage(error.response.data);
       });
   };
-  const [errorMessage, setErrorMessage] = useState("");
+
   return (
     <>
       <div className="d-flex justify-content-center align-items-center py-4 bg-body-tertiary min-vh-100">
