@@ -1,17 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import BillService from '../../services/billService';
+import loginService from '../../services/LoginService';
+import { useNavigate } from 'react-router-dom';
 
 export default function Bill() {
     const [data, setData] = useState();
     const[error,setError]=useState();
-    const cardNumber="4559355463649580";
+    const navigate = useNavigate();
+   var cardNumber="";
+    
 
     useEffect(() => {
         const getBill = async () => {
             try {
+                if(loginService.getCustomer().creditCard==null){
+                    console.log("Card not found");
+                    navigate("/card/");
+                    
+                }else{
+                 cardNumber= loginService.getCustomer().creditCard.cardNumber;
                 const response = await BillService.getBill(cardNumber);
                 setData(response.data);
                 console.log(response.data);
+                }
             } catch (error) {
                 if (error.response) {
                     setError(error.response.data);
@@ -22,6 +33,7 @@ export default function Bill() {
                     setError(error.message);
                 }
             }
+        
         };
         
 
