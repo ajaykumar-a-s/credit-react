@@ -125,7 +125,7 @@ export default function Bill() {
             )}
             
         </div>
-           {error ? <h1>{error }</h1>:null}
+           {error ? <pre>{error }</pre>:null}
         </>
     );
 }
