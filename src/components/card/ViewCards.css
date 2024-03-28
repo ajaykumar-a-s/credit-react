@@ -1,0 +1,125 @@
+.credit-card {
+    /* width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 20px;
+    font-family: Arial, sans-serif; */
+
+    background: linear-gradient(90deg, #0d2c4a 0%, #145a8a 50%, #0f3c6a 51%, #3a6f9c 100%);    color: white;
+    padding: 20px;
+    width: 400px;
+    height: 310px;
+    position: relative;
+    box-sizing: border-box;
+    margin: 20px;
+    border-radius: 25px;
+    flex: 0 0 calc(50% - 40px);
+    transition: transform 0.3s ease-in-out;
+    
+  }
+  
+
+  
+  .credit-card-logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    color: #43e63a; 
+  }
+  
+  .credit-card-number {
+    font-family: 'Courier New', monospace;
+    font-size: 27px;
+    color: #ffffff; /* white */
+    font-weight: bold;
+  }
+  
+  .credit-card-info {
+    margin-top: 30px;
+    display: flex; 
+    justify-content: space-between;
+  }
+  
+  .credit-card-name
+  {
+    
+    font-size: 20px;
+    color: #ffffff; /* white */
+    font-weight: bold;
+
+  }
+  .credit-card-valid {
+    font-size: 16px;
+    text-align: left;
+  }
+  .credit-card-cvv {
+    color: #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .credit-card-type
+  {
+    font-weight:bold;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    color: #f1f10a; /* light yellow */ 
+    text-align: right;
+
+  }
+  .credit-card-interest-rate,
+  .credit-limit {
+    color: #98fb98; /* pale green */
+  }
+  
+  .current-limit {
+    color: #ff7f7f/* light coral */
+  }
+  .credit-card-limits {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .limit {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+  }
+  .noCards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #0d2c4a 0%, #145a8a 50%, #0f3c6a 51%, #3a6f9c 100%);    color: white;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    width: 380px;
+    height: 290px;
+    position: relative;
+    box-sizing: border-box;
+    margin: 20px;
+    border-radius: 25px;
+    text-align: center;
+   font-size: 20px;
+   flex: 0 0 calc(50% - 20px);
+  }
+  .credit-card-valid{
+    right: 90%;
+    color: #d3d3d3;
+  }
+  .credit-card-name
+  {
+    font-weight: bold;
+  }
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }

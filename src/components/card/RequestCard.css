@@ -1,0 +1,64 @@
+
+
+.button-text {
+    font-size: 15px;
+    font-style: bold;
+    size: 20PX;
+    padding: 15px;
+  width: 150px;
+    color: white 
+  }
+  
+  .container {
+    height: 200px;
+    position: absolute;
+    
+  }
+  p.my-paragraph {
+    font-weight: bold;
+   text-align: center;
+   size: 20px;
+  }
+  
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    left: 30%;
+    color:black;
+    /*-ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
+    background-color: rgb(219, 219, 31);
+    border-radius: 10px;
+  
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .cardbg
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #0d2c4a 0%, #145a8a 50%, #0f3c6a 51%, #3a6f9c 100%);    color: white;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    width: 380px;
+    height: 290px;
+    position: relative;
+    box-sizing: border-box;
+    margin: 20px;
+    border-radius: 25px;
+    text-align: center;
+   
+      
+  }
+  
+  
