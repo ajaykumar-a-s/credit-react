@@ -10,7 +10,7 @@ import TransferAmount from "./components/transaction/TransferAmount";
 import ViewTransactions from "./components/transaction/ViewTransactions";
 import RequestCard from "./components/card/RequestCard";
 import ViewRequests from "./components/card/ViewRequests";
-import ViewCard from "./components/card/ViewCard";
+import ViewCard from "./components/card/ViewCards";
 import ViewMerchant from "./components/merchant/ViewMerchant";
 import AddMerchant from "./components/merchant/AddMerchant";
 import AddCustomer from "./components/AddCustomer";
