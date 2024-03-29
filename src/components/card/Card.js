@@ -9,7 +9,7 @@ export default function Card() {
           <div className="col-sm-3">
             <ul className="nav flex-column nav-pills nav-justified">
               <li className="nav-item">
-              <NavLink exact to="/view-cards" className="nav-link" activeClassName="active-link">View Cards</NavLink></li>
+              <NavLink exact to="/view-card" className="nav-link" activeClassName="active-link">View Cards</NavLink></li>
               {loginService.isCustomerLoggedIn() && (
                 <li className="nav-item">
                   <NavLink to="request" className="nav-link" activeClassName="active-link">Request Card</NavLink>

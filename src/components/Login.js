@@ -3,13 +3,25 @@ import { useNavigate } from "react-router-dom";
 import loginService from "../services/LoginService";
 function Login() {
   const navigate = useNavigate();
+  const [loginStatus, setLoginStatus] = useState(null);
   useEffect(() => {
-    if (loginService.isCustomerLoggedIn()) {
+    const checkLoginStatus = async () => {
+      if (await loginService.isCustomerLoggedIn()) {
+        setLoginStatus("customer");
+      } else if (await loginService.isAdminLoggedIn()) {
+        setLoginStatus("admin");
+      }
+    };
+    checkLoginStatus();
+  }, []);
+
+  useEffect(() => {
+    if (loginStatus === "customer") {
       navigate("/customer");
-    } else if (loginService.isAdminLoggedIn()) {
+    } else if (loginStatus === "admin") {
       navigate("/card/view-requests");
     }
-  }, [navigate]);
+  }, [navigate, loginStatus]);
   const [loginForm, setLoginForm] = useState({
     email: "",
     password: "",
